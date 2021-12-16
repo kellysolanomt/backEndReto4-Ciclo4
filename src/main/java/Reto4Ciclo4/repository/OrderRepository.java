@@ -74,7 +74,7 @@ public class OrderRepository {
                 .gte(LocalDate.parse(dateStr, dtf).minusDays(1).atStartOfDay())
                 .lt(LocalDate.parse(dateStr, dtf).plusDays(1).atStartOfDay())
                 .and("salesMan.id").is(id);
-
+        query.addCriteria(dateCriteria);
         List<Order> orders = mongoTemplate.find(query,Order.class);
 
         return orders;

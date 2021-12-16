@@ -3,6 +3,7 @@ package Reto4Ciclo4.service;
 import Reto4Ciclo4.model.Clothe;
 import Reto4Ciclo4.repository.ClotheRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,10 @@ import java.util.Optional;
 public class ClotheService {
     @Autowired
     private ClotheRepository clotheRepository;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
     public List<Clothe> getAll(){
         return clotheRepository.getAll();
     }
