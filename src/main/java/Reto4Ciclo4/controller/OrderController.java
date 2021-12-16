@@ -54,7 +54,7 @@ public class OrderController {
     }
 
     @GetMapping("/state/{state}/{id}")
-    public List<Order> ordersSalesManByState(String state, Integer id){
+    public List<Order> ordersSalesManByState(@PathVariable("state") String state, @PathVariable("id") Integer id){
         return orderService.ordersSalesManByState(state, id);
     }
 
